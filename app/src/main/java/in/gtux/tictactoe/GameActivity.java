@@ -45,7 +45,6 @@ public class GameActivity extends AppCompatActivity {
 
     public void init_stuff() {
         game = new TicTacToe();
-        dialog = new AlertDialog.Builder(this).create();
         btnlist = new int[] {
                 R.id.pos00, R.id.pos01, R.id.pos02,
                 R.id.pos10, R.id.pos11, R.id.pos12,
@@ -84,16 +83,19 @@ public class GameActivity extends AppCompatActivity {
             return;
 
         if (state == TicTacToe.DRAW) {
-            dialog.setTitle("Game Draw!");
-            dialog.setMessage("Draw!!");
-            dialog.show();
+            showMessage("Draw", "Game is drawn!");
             return;
         }
 
         char winner = game.getWinner() == TicTacToe.EX ? 'X' : 'O';
         lockBoard();
-        dialog.setTitle("Winner!");
-        dialog.setMessage("Player " + winner + " wins!!");
+        showMessage("Winner!", "Player " + winner + " wins!!");
+    }
+
+    protected void showMessage(String title, String message) {
+        dialog = new AlertDialog.Builder(this).create();
+        dialog.setTitle(title);
+        dialog.setMessage(message);
         dialog.show();
     }
 }
