@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="mnu_splayer">Start Single Player</string>
+    <string name="mnu_mplayer">Start Multiplayer</string>
+    <string name="mnu_exit">Exit</string>
+    <string name="comingsoon">Coming soon!!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_game">GameActivity</string>
+</resources>
